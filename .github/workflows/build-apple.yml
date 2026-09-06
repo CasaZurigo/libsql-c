@@ -1,0 +1,43 @@
+name: Build Apple
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "30 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apple
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Apple targets on the pinned toolchain
+        run: |
+          TC="$(rustup show active-toolchain | awk '{print $1}')"
+          rustup toolchain install "$TC" --profile minimal
+          rustup target add aarch64-apple-ios aarch64-apple-ios-sim --toolchain "$TC"
+
+      - name: Package xcframework
+        run: ./scripts/package-apple.sh
+
+      - name: Publish rolling release
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest \
+            dist/CLibsql.xcframework.zip \
+            dist/CLibsql.xcframework.zip.sha256 \
+            --title "CLibsql Apple build ($GITHUB_SHA)" \
+            --notes "Built from $GITHUB_SHA. Dylib xcframework exporting only libsql_* symbols."
+        env:
+          GH_TOKEN: ${{ github.token }}

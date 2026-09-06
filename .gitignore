@@ -1,9 +1,6 @@
 target/
+target-*/
 .DS_Store
 test*.db*
 *.o
 local.db
-example
-result
-.direnv/
-dist/

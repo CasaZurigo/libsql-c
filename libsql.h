@@ -140,6 +140,8 @@ typedef struct {
     bool disable_safety_assert;
     /** Provide a namespace through a header. */
     const char *namespace;
+    /** If set, writes of synced databases are applied locally and pushed to the remote by the sync interval, instead of being sent to the remote primary. */
+    bool disable_remote_writes;
 } libsql_database_desc_t;
 
 typedef struct {

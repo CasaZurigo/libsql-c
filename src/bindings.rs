@@ -449,10 +449,12 @@ pub struct libsql_database_desc_t {
     pub disable_safety_assert: bool,
     #[doc = " Provide a namespace through a header."]
     pub namespace: *const ::std::os::raw::c_char,
+    #[doc = " If set, writes of synced databases are applied locally and pushed to the remote by the sync interval, instead of being sent to the remote primary."]
+    pub disable_remote_writes: bool,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of libsql_database_desc_t"][::std::mem::size_of::<libsql_database_desc_t>() - 56usize];
+    ["Size of libsql_database_desc_t"][::std::mem::size_of::<libsql_database_desc_t>() - 64usize];
     ["Alignment of libsql_database_desc_t"]
         [::std::mem::align_of::<libsql_database_desc_t>() - 8usize];
     ["Offset of field: libsql_database_desc_t::url"]
@@ -477,6 +479,8 @@ const _: () = {
         [::std::mem::offset_of!(libsql_database_desc_t, disable_safety_assert) - 47usize];
     ["Offset of field: libsql_database_desc_t::namespace"]
         [::std::mem::offset_of!(libsql_database_desc_t, namespace) - 48usize];
+    ["Offset of field: libsql_database_desc_t::disable_remote_writes"]
+        [::std::mem::offset_of!(libsql_database_desc_t, disable_remote_writes) - 56usize];
 };
 impl Default for libsql_database_desc_t {
     fn default() -> Self {

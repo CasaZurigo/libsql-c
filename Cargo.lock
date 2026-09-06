@@ -852,9 +852,8 @@ dependencies = [
 
 [[package]]
 name = "libsql"
-version = "0.9.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c92f460194a673c29e82520a061a82f83892faca9ce6881db93d591cd38cb3dc"
+version = "0.10.0-pre.4"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "anyhow",
  "async-stream",
@@ -916,9 +915,8 @@ dependencies = [
 
 [[package]]
 name = "libsql-ffi"
-version = "0.9.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "64691b229b9d5c0754115f59a0e5c0d1bcc102bfe402b96f2bbf9d5150a4ab3c"
+version = "0.10.0-pre.4"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "bindgen 0.66.1",
  "cc",
@@ -928,9 +926,8 @@ dependencies = [
 
 [[package]]
 name = "libsql-hrana"
-version = "0.9.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c18b78daf4af8603c048f584faada18c8970f4f3af16df0c3319a92c90d0d696"
+version = "0.10.0-pre.4"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "base64",
  "bytes",
@@ -940,9 +937,8 @@ dependencies = [
 
 [[package]]
 name = "libsql-rusqlite"
-version = "0.9.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c502ebc6fd1a7ba1b686c47226016fb8e913080c4021491bda33ca33c6fa1ab4"
+version = "0.10.0-pre.4"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "bitflags 2.9.1",
  "fallible-iterator 0.2.0",
@@ -955,8 +951,7 @@ dependencies = [
 [[package]]
 name = "libsql-sqlite3-parser"
 version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "15a90128c708356af8f7d767c9ac2946692c9112b4f74f07b99a01a60680e413"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "bitflags 2.9.1",
  "cc",
@@ -972,9 +967,8 @@ dependencies = [
 
 [[package]]
 name = "libsql-sys"
-version = "0.9.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e7b9ab82fa6122efe2b2fe066043d6330aa4a7aa656b4ec0df9768ffd1ea6a0"
+version = "0.10.0-pre.4"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "bytes",
  "libsql-ffi",
@@ -986,9 +980,8 @@ dependencies = [
 
 [[package]]
 name = "libsql_replication"
-version = "0.9.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aa911faee7c1e039a44aeced5e61b5106fb714782e26d89216c87c83eb1ce410"
+version = "0.10.0-pre.4"
+source = "git+https://github.com/CasaZurigo/libsql.git?branch=skip-safety-assert-synced#a4d4293a8eee4d95d81bb12b4a4090816582b069"
 dependencies = [
  "aes",
  "async-stream",

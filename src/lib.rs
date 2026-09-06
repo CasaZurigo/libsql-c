@@ -392,6 +392,11 @@ pub extern "C" fn libsql_database_init(desc: c::libsql_database_desc_t) -> c::li
                 // read_your_writes is true by default.
                 let db = db.read_your_writes(desc.disable_read_your_writes.not());
                 let db = unsafe { db.skip_safety_assert(desc.disable_safety_assert) };
+                let db = if desc.disable_remote_writes {
+                    db.synced_remote_writes(Some(false))
+                } else {
+                    db
+                };
                 let db = match (desc.cypher, encryption_key) {
                     (
                         c::libsql_cypher_t::LIBSQL_CYPHER_AES256
